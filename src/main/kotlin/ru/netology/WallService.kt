@@ -35,6 +35,7 @@ class WallService {
     }
 
 
+    @Throws(PostNotFoudException::class)
     fun repotComment(
         owner_id: Int,
         comment_id: Int,
@@ -43,8 +44,9 @@ class WallService {
         for (post in posts) {
             if (owner_id == post.id)
                 for (comment in comments)
-                    if (comment_id == comment.id)
+                    if (comment_id == comment.id) {
                         return true
+                    }
         }
         return false
         throw PostNotFoudException("Такой пост не найден")
