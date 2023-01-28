@@ -10,17 +10,17 @@ data class Post(
     val replyOwnerId: Int?=null,
     val replyPostId: Int?=null,
     val friendsOnly: Boolean = false,
-    val comments: Comments?=null,
+    var comments: Array <Comment>?= emptyArray(),
     val copyright: String?=null,
     val likes: Likes?=null,
     val reposts: Reposts?=null,
     val views: Views?=null,
     val postType: String = "post",
     val postSource: PostSource?=null,
-    val attachment: Array<Attachment>?=null,
+    val attachment: Array<Attachment>?= emptyArray(),
     val geo: Geo?=null,
     val signerId: Int?=null,
-    val copyHistory: Array<Post>?=null,
+    val copyHistory: Array<Post>?= emptyArray(),
     val canPin: Boolean = false,
     val canDelete: Boolean = false,
     val canEdit: Boolean = false,
@@ -44,4 +44,6 @@ data class Post(
     override fun hashCode(): Int {
         return id!!
     }
+
+
 }

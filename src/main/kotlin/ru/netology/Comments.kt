@@ -6,4 +6,8 @@ class Comments (
     val groupsCanPost: Boolean,
     val canClose: Boolean,
     val canOpen: Boolean
-)
+) {
+    operator fun get(commentId: Int) {
+
+    }
+}
