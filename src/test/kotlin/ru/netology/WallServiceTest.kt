@@ -112,7 +112,7 @@ class WallServiceTest {
         WallService().addedPost(post)
         val commentForTest = Comment(post.id, text = "test")
         val comment = WallService().createComment(post.id, commentForTest)
-        assertTrue(WallService().repotComment(post.id!!,comment.id!!, ReasonType.Спам))
+        assertTrue(WallService().repotComment(post.id!!, comment.id!!, ReasonType.Спам))
 
     }
 }
